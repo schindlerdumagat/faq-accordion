@@ -1,48 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | FAQ accordion</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | FAQ accordion</title>
 
-  FAQs
+    <link
+      rel="preload"
+      href="assets/fonts/work-sans-v24-latin-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/work-sans-v24-latin-600.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/work-sans-v24-latin-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
 
-  What is Frontend Mentor, and how will it help me?
-
-  Frontend Mentor offers realistic coding challenges to help developers improve their 
-  frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
-  all levels and ideal for portfolio building.
-
-  Is Frontend Mentor free?
-
-  Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
-  option providing access to a range of projects suitable for all skill levels.
-
-  Can I use Frontend Mentor projects in my portfolio?
-
-  Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
-  way to showcase your skills to potential employers!
-
-  How can I get help if I'm stuck on a Frontend Mentor challenge?
-  
-  The best place to get help is inside Frontend Mentor's Discord community. There's a help 
-  channel where you can ask questions and seek support from other community members.
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1 class="visually-hidden">Sample FAQ Accordion</h1>
+      <section class="faqs-section">
+        <div class="faqs-section__title-container">
+          <img class="faqs-section__img" src="assets/images/icon-star.svg" alt="" width="40" height="41" />
+          <h2 class="faqs-section__title">FAQs</h2>
+        </div>
+        <ul class="faqs">
+          <li class="faqs__list-item">
+            <details class="faq">
+              <summary class="faq__summary">
+                What is Frontend Mentor, and how will it help me?
+              </summary>
+              <p class="faq__description">
+                Frontend Mentor offers realistic coding challenges to help
+                developers improve their frontend coding skills with projects in
+                HTML, CSS, and JavaScript. It's suitable for all levels and
+                ideal for portfolio building.
+              </p>
+            </details>
+          </li>
+          <hr class="divider">
+          <li class="faqs__list-item">
+            <details class="faq">
+              <summary class="faq__summary">Is Frontend Mentor free?</summary>
+              <p class="faq__description">
+                Yes, Frontend Mentor offers both free and premium coding
+                challenges, with the free option providing access to a range of
+                projects suitable for all skill levels.
+              </p>
+            </details>
+          </li>
+          <hr class="divider">
+          <li class="faqs__list-item">
+            <details class="faq">
+              <summary class="faq__summary">
+                Can I use Frontend Mentor projects in my portfolio?
+              </summary>
+              <p class="faq__description">
+                Yes, you can use projects completed on Frontend Mentor in your
+                portfolio. It's an excellent way to showcase your skills to
+                potential employers!
+              </p>
+            </details>
+          </li>
+          <hr class="divider">
+          <li class="faqs__list-item">
+            <details class="faq">
+              <summary class="faq__summary">
+                How can I get help if I'm stuck on a challenge?
+              </summary>
+              <p class="faq__description">
+                The best place to get help is inside Frontend Mentor's Discord
+                community. There's a help channel where you can ask questions
+                and seek support from other community members.
+              </p>
+            </details>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
 </html>

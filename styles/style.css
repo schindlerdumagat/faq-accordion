@@ -1,0 +1,212 @@
+/* CSS RESETS */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, p {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul elements with a list role, which suggests default styling will be removed */
+ul {
+  list-style: none;
+}
+
+h1, h2 {
+  line-height: 1.1;   /* Set shorter line heights on headings and interactive elements */
+  text-wrap: balance; /* Balance text wrapping on headings */
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* For Accessibility Purposes Only */
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* FONTS */
+
+/* work-sans-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/work-sans-v24-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* work-sans-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../assets/fonts/work-sans-v24-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* work-sans-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/fonts/work-sans-v24-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* CUSTOM VARIABLES */
+
+:root {
+
+    /* COLORS */
+    
+    --clr-white: hsl(0, 100%, 100%);
+    --clr-black: hsl(0, 0%, 0%);
+    --clr-purple-950: hsl(292, 42%, 14%);
+    --clr-purple-600: hsl(292, 16%, 49%);
+    --clr-purple-100: hsl(275, 100%, 97%);
+    --clr-violet-100: hsl(281, 83%, 54%);
+
+    /* TYPOGRAPHY */
+    
+    --ff-main: "Work Sans", sans-serif;
+    --fs-body: clamp(0.875rem, 0.7557rem + 0.5089vw, 1rem);
+
+    /* SPACINGS */
+
+    --space-100: 0.5rem;
+    --space-200: 1rem;
+    --space-300: 1.5rem;
+    --space-400: 2rem;
+    --space-500: 2.5rem;
+    --space-600: 3rem;
+
+}
+
+body {
+    font-family: var(--ff-main);
+    font-size: var(--fs-body);
+    line-height: 1.5;
+    color: var(--clr-purple-600);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: var(--space-300);
+    background-color: var(--clr-purple-100);
+    background-image: url("../assets/images/background-pattern-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+}
+
+.divider {
+    height: 1px;
+    border: transparent;
+    border-top: 1px solid var(--clr-purple-100);
+}
+
+.faqs-section {
+    background-color: var(--clr-white);
+    border-radius: clamp(0.5rem, 0.0229rem + 2.0356vw, 1rem);
+    padding: clamp(var(--space-300), 0.5458rem + 4.0712vw, var(--space-500));
+    max-width: 37.5rem;
+    box-shadow: 0px 32px 56px hsla(281, 100%, 23%, 0.1);
+}
+
+.faqs-section__title-container {
+    display: flex;
+    align-items: center;
+    gap: var(--space-300);
+    margin-block-end: clamp(var(--space-300), 1.0229rem + 2.0356vw, var(--space-400));
+}
+
+.faqs-section__img {
+    width: clamp(1.3125rem, 0.4776rem + 3.5623vw, 2.1875rem);
+}
+
+.faqs-section__title {
+    font-size: clamp(2rem, 0.5687rem + 6.1069vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.178;
+    color: var(--clr-purple-950);
+}
+
+.faqs {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-300);
+}
+
+.faq[open] .faq__summary {
+    margin-block-end: var(--space-300);
+}
+
+.faq__summary {
+    font-size: clamp(1rem, 0.8807rem + 0.5089vw, 1.125rem);
+    font-weight: 600;
+    line-height: 1.17;
+    color: var(--clr-purple-950);
+    padding-inline-end: var(--space-600);
+    position: relative;
+    cursor: pointer;
+    transition: color 300ms ease;
+}
+
+.faq__summary:hover {
+    color: var(--clr-violet-100);
+}
+
+.faq__summary::marker {
+    content: none;
+}
+
+.faq__summary::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 30px;
+    height: 31px;
+    transform: translateY(-50%);
+    background-image: url("../assets/images/icon-plus.svg");
+}
+
+.faq[open] .faq__summary::after {
+    background-image: url("../assets/images/icon-minus.svg");
+}
+
+@media screen and (min-width: 48em) {
+    body {
+        background-size: auto;
+        background-image: url("../assets/images/background-pattern-desktop.svg");
+    }
+}
+
+@media screen and (min-width: 90rem) {
+    body {
+        background-size: contain;
+    }
+}
