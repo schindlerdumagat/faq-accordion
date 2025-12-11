@@ -122,12 +122,6 @@ body {
     background-position: top;
 }
 
-.divider {
-    height: 1px;
-    border: transparent;
-    border-top: 1px solid var(--clr-purple-100);
-}
-
 .faqs-section {
     background-color: var(--clr-white);
     border-radius: clamp(0.5rem, 0.0229rem + 2.0356vw, 1rem);
@@ -160,6 +154,11 @@ body {
     gap: var(--space-300);
 }
 
+.faqs__list-item + .faqs__list-item {
+    padding-block-start: var(--space-300);
+    border-block-start: 1px solid var(--clr-purple-100);
+}
+
 .faq[open] .faq__summary {
     margin-block-end: var(--space-300);
 }
@@ -177,6 +176,11 @@ body {
 
 .faq__summary:hover {
     color: var(--clr-violet-100);
+}
+
+.faq__summary:focus-visible {
+    outline: 2px solid var(--clr-violet-100);
+    outline-offset: 2px;
 }
 
 .faq__summary::marker {
